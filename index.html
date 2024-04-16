@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, 
+     user-scalable=0"
+    />
+    <title>Virgil — The font that powers Excalidraw</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/open-color@1.8.0/open-color.css"
+    />
+    <style>
+      @font-face {
+        font-family: "Virgil";
+        src: url("Virgil.woff2");
+        font-display: swap;
+      }
+      *,
+      *:before,
+      *:after {
+        box-sizing: border-box;
+      }
+      body {
+        padding-bottom: 64px;
+      }
+      a {
+        text-decoration: none;
+        font-weight: 400;
+        color: var(--oc-blue-7);
+      }
+      a:hover,
+      a:active {
+        color: var(--oc-blue-5);
+      }
+      h1 {
+        background-image: url(public/title.svg);
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-size: contain;
+        line-height: 3;
+        font-size: 4em;
+      }
+      h3 {
+        margin-top: 48px;
+        color: var(--oc-gray-6);
+      }
+      .virgil {
+        font-family: Virgil, var(--bs-font-sans-serif);
+      }
+      .example {
+        font-size: 1.8em;
+        font-family: Virgil, var(--bs-font-sans-serif);
+        margin: 16px 0;
+      }
+      .playground {
+        width: 600px;
+        max-width: 100%;
+        border-radius: 6px;
+        margin: 32px 0;
+        font-family: Virgil, var(--bs-font-sans-serif);
+        padding: 8px;
+        text-align: center;
+        font-size: 24px;
+        border: 2px solid var(--oc-blue-7);
+        color: var(--oc-gray-9);
+      }
+      .playground::placeholder {
+        color: var(--oc-gray-5);
+      }
+      .btn {
+        color: var(--oc-white);
+        font-size: 22px;
+        line-height: 3;
+        background-image: url(public/btn.svg);
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-size: contain;
+        min-width: 400px;
+        max-width: 100%;
+      }
+      .btn:hover {
+        color: var(--oc-blue-1);
+      }
+    </style>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-387204-13"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-387204-13");
+    </script>
+  </head>
+
+  <body>
+    <div class="container mt-5 text-center">
+      <h1 class="virgil">Virgil</h1>
+      <p class="lead mt-5">
+        The font that powers <a href="https://excalidraw.com">Excalidraw</a>,
+        created by <strong>Ellinor Rapp</strong>, is now open sourced.
+      </p>
+      <p>
+        <a
+          class="github-button"
+          href="https://github.com/excalidraw/virgil"
+          data-size="large"
+          data-show-count="true"
+          aria-label="Star excalidraw/virgil on GitHub"
+          >Stars</a
+        >
+      </p>
+      <p class="lead">
+        Send us feedback on
+        <a href="https://github.com/excalidraw/virgil/issues">GitHub</a>.
+      </p>
+
+      <h3>Try it below</h3>
+      <p>
+        <textarea
+          id="playground"
+          class="playground"
+          rows="3"
+          placeholder="The quick brown fox jumps over the lazy dog"
+        >
+Pack my box with five dozen liquor jugs</textarea
+        >
+      </p>
+
+      <p>
+        <a class="btn" href="/Virgil.woff2">Download the latest .woff2</a>
+      </p>
+
+      <h3>Latin</h3>
+      <p class="example">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</p>
+      <p class="example">a b c d e f g h i j k l m n o p q r s t u v w x y z</p>
+
+      <h3>Greek</h3>
+      <p class="example">Α Β Γ Δ Ε Ζ Η Θ Ι Κ Λ Μ Ν Ξ Ο Π Ρ Σ Τ Υ Φ Χ Ψ Ω</p>
+      <p class="example">α β γ δ ε ζ η θ ι κ λ μ ν ξ ο π ρ σ ς τ υ φ χ ψ ω</p>
+
+      <h3>Cyrillic</h3>
+      <p class="example">
+        А Б В Г Д Е Ё Ж З И Й К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я
+      </p>
+      <p class="example">
+        а б в г д е ё ж з и й к л м н о п р с т у ф х ц ч ш щ ъ ы ь э ю я
+      </p>
+
+      <h3>Numbers</h3>
+      <p class="example">0 1 2 3 4 5 6 7 8 9</p>
+      <h3>Symbols</h3>
+      <p class="example">
+        [ ] ( ) { } &lt; &gt; ? ! . , ; ' " ~ @ # $ € % ^ & + - * = / \
+      </p>
+    </div>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script>
+      const playgroundElement = document.getElementById("playground");
+      const playgroundText = new URLSearchParams(location.hash.slice(1)).get(
+        "playground",
+      );
+
+      if (playgroundText) {
+        playgroundElement.value = decodeURIComponent(playgroundText);
+      }
+
+      playgroundElement.addEventListener("input", (event) => {
+        const params = new URLSearchParams();
+        params.set("playground", encodeURIComponent(event.target.value));
+        location.hash = params.toString();
+      });
+    </script>
+  </body>
+</html>
